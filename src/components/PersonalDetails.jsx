@@ -1,7 +1,7 @@
 function PersonalDetails() {
   return (
     <div id="personal-details">
-      <h1>Personal Details</h1>
+      <h2>Personal Details</h2>
       <form action="/submit" method="post" id="personal-details-form">
         <label htmlFor="full-name">Full name</label>
         <input type="text" placeholder="First and last name" id="full-name" />

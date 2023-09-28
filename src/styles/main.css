@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf);
+}
+
+@font-face {
+  font-family: "Open Sans Italic";
+  src: url(../assets/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Open Sans";
+}
