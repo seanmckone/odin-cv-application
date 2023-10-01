@@ -1,45 +1,43 @@
+import InputGroup from "./InputGroup.jsx";
+
 function PersonalDetails({ personalDetails, onChange }) {
   return (
     <form action="/submit" method="post" id="personal-details-form">
       <h2>Personal Details</h2>
-
-      <label htmlFor="full-name">Full name</label>
-      <input
-        type="text"
-        placeholder="First and last name"
+      <InputGroup
         id="full-name"
+        placeholder="First and last name"
+        type="text"
+        labelText="Full name"
         onChange={onChange}
-        data-key="fullName"
+        dataKey="fullName"
         value={personalDetails.fullName}
       />
-
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        placeholder="Enter email"
+      <InputGroup
         id="email"
+        placeholder="Enter email"
+        type="email"
+        labelText="Email"
         onChange={onChange}
-        data-key="email"
+        dataKey="email"
         value={personalDetails.email}
       />
-
-      <label htmlFor="phone-number">Phone number</label>
-      <input
-        type="tel"
-        placeholder="Enter phone number"
+      <InputGroup
         id="phone-number"
+        placeholder="Enter phone number"
+        type="tel"
+        labelText="Phone number"
         onChange={onChange}
-        data-key="phoneNumber"
+        dataKey="phoneNumber"
         value={personalDetails.phoneNumber}
       />
-
-      <label htmlFor="address">Address</label>
-      <input
-        type="text"
-        placeholder="City, Country"
+      <InputGroup
         id="address"
+        placeholder="City, Country"
+        type="text"
+        labelText="Address"
         onChange={onChange}
-        data-key="address"
+        dataKey="address"
         value={personalDetails.address}
       />
     </form>
