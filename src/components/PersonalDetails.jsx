@@ -21,6 +21,7 @@ function PersonalDetails({ personalDetails, onChange }) {
         onChange={onChange}
         dataKey="email"
         value={personalDetails.email}
+        recommended
       />
       <InputGroup
         id="phone-number"
@@ -30,6 +31,7 @@ function PersonalDetails({ personalDetails, onChange }) {
         onChange={onChange}
         dataKey="phoneNumber"
         value={personalDetails.phoneNumber}
+        recommended
       />
       <InputGroup
         id="address"
@@ -39,6 +41,7 @@ function PersonalDetails({ personalDetails, onChange }) {
         onChange={onChange}
         dataKey="address"
         value={personalDetails.address}
+        recommended
       />
     </form>
   );

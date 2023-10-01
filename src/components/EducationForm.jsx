@@ -1,6 +1,7 @@
 import InputGroup from "./InputGroup.jsx";
+import FormButtons from "./FormButtons.jsx";
 
-function EducationForm({ educationDetails, onChange }) {
+function EducationForm({ educationDetails, onChange, cancel, remove, save }) {
   return (
     <form action="/submit" method="post" id="education-form">
       <InputGroup
@@ -21,7 +22,7 @@ function EducationForm({ educationDetails, onChange }) {
         dataKey="degree"
         value={educationDetails.degree}
       />
-      <div id="education-dates">
+      <div id="dates">
         <InputGroup
           id="start-date"
           placeholder="Enter start date"
@@ -49,7 +50,9 @@ function EducationForm({ educationDetails, onChange }) {
         onChange={onChange}
         dataKey="location"
         value={educationDetails.location}
+        optional
       />
+      <FormButtons cancel={cancel} remove={remove} save={save}></FormButtons>
     </form>
   );
 }
