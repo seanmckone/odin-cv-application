@@ -3,31 +3,19 @@ import { useState } from "react";
 import PersonalDetails from "./components/PersonalDetails.jsx";
 import EducationForm from "./components/EducationForm.jsx";
 import ExperienceForm from "./components/ExperienceForm.jsx";
+import Resume from "./components/resume/Resume";
+import exampleData from "./exampleData.js";
 
 function App() {
-  const [personalDetails, setPersonalDetails] = useState({
-    fullName: "Sean McKone",
-    email: "seandmckone@gmail.com",
-    phoneNumber: "910-813-6037",
-    address: "Raleigh, NC",
-  });
+  const [personalDetails, setPersonalDetails] = useState(
+    exampleData.personalDetails
+  );
 
-  const [educationDetails, setEducationDetails] = useState({
-    school: "NCSU",
-    degree: "Computer Science",
-    startDate: "May 2021",
-    endDate: "May 2023",
-    location: "Raleigh, NC",
-  });
+  const [educations, setEducations] = useState(exampleData.sections.educations);
 
-  const [experienceDetails, setExperienceDetails] = useState({
-    company: "Cool Company",
-    position: "SWE I",
-    startDate: "May 2021",
-    endDate: "May 2023",
-    location: "Raleigh, NC",
-    description: "Did some work on giant codebase. Very fun.",
-  });
+  const [experiences, setExperiences] = useState(
+    exampleData.sections.experiences
+  );
 
   function handlePersonalDetailsChange(e) {
     setPersonalDetails({
@@ -36,18 +24,38 @@ function App() {
     });
   }
 
-  function handleEducationDetailsChange(e) {
-    setEducationDetails({
-      ...educationDetails,
-      [e.target.dataset.key]: e.target.value,
+  function handleEducationsChange(e, id) {
+    const newEducations = educations.map((item) => {
+      if (item.id === id) {
+        const updatedEducation = {
+          ...item,
+          [e.target.dataset.key]: e.target.value,
+        };
+
+        return updatedEducation;
+      }
+
+      return item;
     });
+
+    setEducations(newEducations);
   }
 
-  function handleExperienceDetailsChange(e) {
-    setExperienceDetails({
-      ...experienceDetails,
-      [e.target.dataset.key]: e.target.value,
+  function handleExperiencesChange(e, id) {
+    const newExperiences = experiences.map((item) => {
+      if (item.id === id) {
+        const updatedExperience = {
+          ...item,
+          [e.target.dataset.key]: e.target.value,
+        };
+
+        return updatedExperience;
+      }
+
+      return item;
     });
+
+    setExperiences(newExperiences);
   }
 
   return (
@@ -56,16 +64,38 @@ function App() {
         personalDetails={personalDetails}
         onChange={handlePersonalDetailsChange}
       ></PersonalDetails>
-      <EducationForm
-        educationDetails={educationDetails}
-        onChange={handleEducationDetailsChange}
-      ></EducationForm>
-      <ExperienceForm
-        experienceDetails={experienceDetails}
-        onChange={handleExperienceDetailsChange}
-      ></ExperienceForm>
+      {educations.map((x) => (
+        <EducationForm
+          key={x.id}
+          educationDetails={x}
+          onChange={(e) => handleEducationsChange(e, x.id)}
+        ></EducationForm>
+      ))}
+      {experiences.map((x) => (
+        <ExperienceForm
+          key={x.id}
+          experienceDetails={x}
+          onChange={(e) => handleExperiencesChange(e, x.id)}
+        ></ExperienceForm>
+      ))}
+      <br />
+      <Resume
+        personalDetails={personalDetails}
+        educations={educations}
+        experiences={experiences}
+      ></Resume>
     </>
   );
 }
 
 export default App;
+
+{
+  /* {exampleData.sections.educations.map((x) => (
+        <EducationForm
+          key={x.id}
+          educationDetails={x}
+          onChange={handleEducationDetailsChange}
+        ></EducationForm>
+      ))} */
+}
