@@ -4,6 +4,7 @@ import PersonalDetails from "./components/PersonalDetails.jsx";
 import EducationForm from "./components/EducationForm.jsx";
 import ExperienceForm from "./components/ExperienceForm.jsx";
 import Resume from "./components/resume/Resume";
+import CollapsedFormButton from "./components/CollapsedFormButton";
 import exampleData from "./exampleData.js";
 
 function App() {
@@ -31,13 +32,10 @@ function App() {
           ...item,
           [e.target.dataset.key]: e.target.value,
         };
-
         return updatedEducation;
       }
-
       return item;
     });
-
     setEducations(newEducations);
   }
 
@@ -48,37 +46,127 @@ function App() {
           ...item,
           [e.target.dataset.key]: e.target.value,
         };
-
         return updatedExperience;
       }
-
       return item;
     });
-
     setExperiences(newExperiences);
+  }
+
+  function showExpForm(e, id) {
+    const newExperiences = experiences.map((item) => {
+      if (item.id === id) {
+        const updatedExperience = {
+          ...item,
+          isCollapsed: !item.isCollapsed,
+        };
+        return updatedExperience;
+      }
+      return item;
+    });
+    setExperiences(newExperiences);
+  }
+
+  function showEduForm(e, id) {
+    const newEducations = educations.map((item) => {
+      if (item.id === id) {
+        const updatedEducation = {
+          ...item,
+          isCollapsed: !item.isCollapsed,
+        };
+        return updatedEducation;
+      }
+      return item;
+    });
+    setEducations(newEducations);
+  }
+
+  function addEducation() {
+    setEducations([
+      ...educations,
+      {
+        degree: "",
+        school: "",
+        location: "",
+        startDate: "",
+        endDate: "",
+        isCollapsed: false,
+        isHidden: false,
+        id: crypto.randomUUID(),
+      },
+    ]);
+  }
+
+  function addExperience() {
+    setExperiences([
+      ...experiences,
+      {
+        company: "",
+        position: "",
+        location: "",
+        description: "",
+        startDate: "",
+        endDate: "",
+        isCollapsed: false,
+        isHidden: false,
+        id: crypto.randomUUID(),
+      },
+    ]);
   }
 
   return (
     <>
+      <p>------------</p>
+      <p>FORM</p>
+      <p>------------</p>
       <PersonalDetails
         personalDetails={personalDetails}
         onChange={handlePersonalDetailsChange}
       ></PersonalDetails>
-      {educations.map((x) => (
-        <EducationForm
-          key={x.id}
-          educationDetails={x}
-          onChange={(e) => handleEducationsChange(e, x.id)}
-        ></EducationForm>
-      ))}
-      {experiences.map((x) => (
-        <ExperienceForm
-          key={x.id}
-          experienceDetails={x}
-          onChange={(e) => handleExperiencesChange(e, x.id)}
-        ></ExperienceForm>
-      ))}
-      <br />
+      <button onClick={addEducation}>+edu</button>
+      {educations.map((x) => {
+        if (!x.isCollapsed) {
+          return (
+            <EducationForm
+              key={x.id}
+              educationDetails={x}
+              onChange={(e) => handleEducationsChange(e, x.id)}
+              save={(e) => showEduForm(e, x.id)}
+            ></EducationForm>
+          );
+        }
+        return (
+          <CollapsedFormButton
+            key={x.id}
+            item={x}
+            onChange={(e) => showEduForm(e, x.id)}
+          ></CollapsedFormButton>
+        );
+      })}
+      <button onClick={addExperience}>+exp</button>
+      {experiences.map((x) => {
+        if (!x.isCollapsed) {
+          return (
+            <ExperienceForm
+              key={x.id}
+              experienceDetails={x}
+              onChange={(e) => handleExperiencesChange(e, x.id)}
+              save={(e) => showExpForm(e, x.id)}
+            ></ExperienceForm>
+          );
+        }
+        return (
+          <CollapsedFormButton
+            key={x.id}
+            item={x}
+            onChange={(e) => showExpForm(e, x.id)}
+          ></CollapsedFormButton>
+        );
+      })}
+      <br /> <br />
+      <p>------------</p>
+      <p>RESUME</p>
+      <p>------------</p>
       <Resume
         personalDetails={personalDetails}
         educations={educations}
@@ -89,13 +177,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* {exampleData.sections.educations.map((x) => (
-        <EducationForm
-          key={x.id}
-          educationDetails={x}
-          onChange={handleEducationDetailsChange}
-        ></EducationForm>
-      ))} */
-}
