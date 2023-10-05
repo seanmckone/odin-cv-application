@@ -114,6 +114,14 @@ function App() {
     ]);
   }
 
+  function removeEducation(id) {
+    setEducations(educations.filter((item) => item.id != id));
+  }
+
+  function removeExperience(id) {
+    setExperiences(experiences.filter((item) => item.id != id));
+  }
+
   return (
     <>
       <p>------------</p>
@@ -132,6 +140,7 @@ function App() {
               educationDetails={x}
               onChange={(e) => handleEducationsChange(e, x.id)}
               save={(e) => showEduForm(e, x.id)}
+              remove={() => removeEducation(x.id)}
             ></EducationForm>
           );
         }
@@ -152,6 +161,7 @@ function App() {
               experienceDetails={x}
               onChange={(e) => handleExperiencesChange(e, x.id)}
               save={(e) => showExpForm(e, x.id)}
+              remove={() => removeExperience(x.id)}
             ></ExperienceForm>
           );
         }
