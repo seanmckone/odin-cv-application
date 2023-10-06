@@ -15,7 +15,7 @@ const exampleData = {
         startDate: "08/2019",
         endDate: "05/2023",
         isCollapsed: true,
-        isHidden: true,
+        isHidden: false,
         id: crypto.randomUUID(),
       },
       {
@@ -25,7 +25,7 @@ const exampleData = {
         startDate: "08/2023",
         endDate: "present",
         isCollapsed: true,
-        isHidden: true,
+        isHidden: false,
         id: crypto.randomUUID(),
       },
     ],
