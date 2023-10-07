@@ -4,7 +4,7 @@ function FormButtons({ cancel, remove, save }) {
       <button type="button" onClick={remove}>
         Delete
       </button>
-      <div id="save-cancel-buttons">
+      <div className="save-cancel-buttons">
         <button type="button" onClick={cancel}>
           Cancel
         </button>
