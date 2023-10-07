@@ -3,7 +3,12 @@ import FormButtons from "./FormButtons.jsx";
 
 function EducationForm({ educationDetails, onChange, cancel, remove, save }) {
   return (
-    <form action="/submit" method="post" id="education-form">
+    <form
+      action="/submit"
+      method="post"
+      id="education-form"
+      className="education-form"
+    >
       <InputGroup
         id="school"
         placeholder="Enter school/university"

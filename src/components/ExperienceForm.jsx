@@ -3,7 +3,12 @@ import FormButtons from "./FormButtons.jsx";
 
 function ExperienceForm({ experienceDetails, onChange, cancel, remove, save }) {
   return (
-    <form action="/submit" method="post" id="experience-form">
+    <form
+      action="/submit"
+      method="post"
+      id="experience-form"
+      className="experience-form"
+    >
       <InputGroup
         id="company"
         placeholder="Enter company name"

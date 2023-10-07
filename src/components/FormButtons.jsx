@@ -1,6 +1,6 @@
 function FormButtons({ cancel, remove, save }) {
   return (
-    <div id="form-buttons">
+    <div className="form-buttons">
       <button type="button" onClick={remove}>
         Delete
       </button>

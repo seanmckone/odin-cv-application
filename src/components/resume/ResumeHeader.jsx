@@ -1,6 +1,8 @@
+import "../../styles/ResumeHeader.css";
+
 function ResumeHeader({ resumeHeaderData }) {
   return (
-    <div id="resume-header">
+    <div className="resume-header">
       <h1>{resumeHeaderData.fullName}</h1>
       <div id="header-contact-info">
         <h3>{resumeHeaderData.email}</h3>

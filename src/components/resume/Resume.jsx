@@ -1,9 +1,10 @@
+import "../../styles/Resume.css";
 import ResumeHeader from "./ResumeHeader";
 import DisplaySection from "./DisplaySection";
 
 function Resume({ personalDetails, educations, experiences }) {
   return (
-    <div id="resume">
+    <div className="resume">
       <ResumeHeader resumeHeaderData={personalDetails}></ResumeHeader>
       <h3>----Education----</h3>
       <DisplaySection section={educations}></DisplaySection>

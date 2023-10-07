@@ -2,7 +2,12 @@ import InputGroup from "./InputGroup.jsx";
 
 function PersonalDetails({ personalDetails, onChange }) {
   return (
-    <form action="/submit" method="post" id="personal-details-form">
+    <form
+      action="/submit"
+      method="post"
+      id="personal-details-form"
+      className="personal-details-form"
+    >
       <h2>Personal Details</h2>
       <InputGroup
         id="full-name"
