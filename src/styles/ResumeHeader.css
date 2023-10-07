@@ -1,0 +1,14 @@
+h1 {
+  font-size: 30px;
+}
+
+.resume-header {
+  text-align: center;
+  background-color: var(--resume-accent-color);
+  color: var(--resume-bg-color);
+}
+
+.header-contact-info {
+  display: flex;
+  flex-direction: row;
+}
