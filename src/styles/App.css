@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  gap: 30px;
+}
+
+.edit-side {
+  display: flex;
+  flex-direction: column;
+}

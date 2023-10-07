@@ -123,66 +123,66 @@ function App() {
   }
 
   return (
-    <>
-      <p>------------</p>
-      <p>FORM</p>
-      <p>------------</p>
-      <PersonalDetails
-        personalDetails={personalDetails}
-        onChange={handlePersonalDetailsChange}
-      ></PersonalDetails>
-      <button onClick={addEducation}>+edu</button>
-      {educations.map((x) => {
-        if (!x.isCollapsed) {
+    <div className="app">
+      <div className="edit-side">
+        <PersonalDetails
+          personalDetails={personalDetails}
+          onChange={handlePersonalDetailsChange}
+        ></PersonalDetails>
+
+        {educations.map((x) => {
+          if (!x.isCollapsed) {
+            return (
+              <EducationForm
+                key={x.id}
+                educationDetails={x}
+                onChange={(e) => handleEducationsChange(e, x.id)}
+                save={(e) => showEduForm(e, x.id)}
+                remove={() => removeEducation(x.id)}
+              ></EducationForm>
+            );
+          }
           return (
-            <EducationForm
+            <CollapsedFormButton
               key={x.id}
-              educationDetails={x}
-              onChange={(e) => handleEducationsChange(e, x.id)}
-              save={(e) => showEduForm(e, x.id)}
-              remove={() => removeEducation(x.id)}
-            ></EducationForm>
+              item={x}
+              onChange={(e) => showEduForm(e, x.id)}
+            ></CollapsedFormButton>
           );
-        }
-        return (
-          <CollapsedFormButton
-            key={x.id}
-            item={x}
-            onChange={(e) => showEduForm(e, x.id)}
-          ></CollapsedFormButton>
-        );
-      })}
-      <button onClick={addExperience}>+exp</button>
-      {experiences.map((x) => {
-        if (!x.isCollapsed) {
+        })}
+        <button onClick={addEducation}>+edu</button>
+
+        {experiences.map((x) => {
+          if (!x.isCollapsed) {
+            return (
+              <ExperienceForm
+                key={x.id}
+                experienceDetails={x}
+                onChange={(e) => handleExperiencesChange(e, x.id)}
+                save={(e) => showExpForm(e, x.id)}
+                remove={() => removeExperience(x.id)}
+              ></ExperienceForm>
+            );
+          }
           return (
-            <ExperienceForm
+            <CollapsedFormButton
               key={x.id}
-              experienceDetails={x}
-              onChange={(e) => handleExperiencesChange(e, x.id)}
-              save={(e) => showExpForm(e, x.id)}
-              remove={() => removeExperience(x.id)}
-            ></ExperienceForm>
+              item={x}
+              onChange={(e) => showExpForm(e, x.id)}
+            ></CollapsedFormButton>
           );
-        }
-        return (
-          <CollapsedFormButton
-            key={x.id}
-            item={x}
-            onChange={(e) => showExpForm(e, x.id)}
-          ></CollapsedFormButton>
-        );
-      })}
-      <br /> <br />
-      <p>------------</p>
-      <p>RESUME</p>
-      <p>------------</p>
-      <Resume
-        personalDetails={personalDetails}
-        educations={educations}
-        experiences={experiences}
-      ></Resume>
-    </>
+        })}
+        <button onClick={addExperience}>+exp</button>
+      </div>
+
+      <div className="resume-side">
+        <Resume
+          personalDetails={personalDetails}
+          educations={educations}
+          experiences={experiences}
+        ></Resume>
+      </div>
+    </div>
   );
 }
 
