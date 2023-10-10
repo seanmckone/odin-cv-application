@@ -1,3 +1,21 @@
 .resume {
   background-color: var(--resume-bg-color);
+  width: 1000px;
+  box-shadow:
+    rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.25) 0px 8px 16px -8px;
+}
+
+.resume-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+}
+
+.section-title {
+  text-align: center;
+  background-color: var(--main-bg-color);
+  font-size: 20px;
+  padding: 10px;
 }

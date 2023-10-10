@@ -1,3 +1,5 @@
+import "../../styles/Section.css";
+
 function Section({ sectionData }) {
   return (
     <div className="section">
@@ -11,10 +13,10 @@ function Section({ sectionData }) {
         <h4>
           {sectionData.company ? sectionData.company : sectionData.school}
         </h4>
-        <h4>
+        <p>
           {sectionData.position ? sectionData.position : sectionData.degree}
-        </h4>
-        {sectionData.description && <h4>{sectionData.description}</h4>}
+        </p>
+        {sectionData.description && <p>{sectionData.description}</p>}
       </div>
     </div>
   );
