@@ -13,10 +13,12 @@ function Section({ sectionData }) {
         <h4>
           {sectionData.company ? sectionData.company : sectionData.school}
         </h4>
-        <p>
+        <p className="section-position-degree">
           {sectionData.position ? sectionData.position : sectionData.degree}
         </p>
-        {sectionData.description && <p>{sectionData.description}</p>}
+        {sectionData.description && (
+          <p className="section-description">{sectionData.description}</p>
+        )}
       </div>
     </div>
   );

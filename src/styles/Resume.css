@@ -21,3 +21,11 @@
   font-size: 20px;
   padding: 5px;
 }
+
+.section-position-degree {
+  font-style: italic;
+}
+
+.section-description {
+  font-size: 17px;
+}
