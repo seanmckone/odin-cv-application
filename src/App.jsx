@@ -53,7 +53,7 @@ function App() {
     setExperiences(newExperiences);
   }
 
-  function showExpForm(e, id) {
+  function showExpForm(id) {
     const newExperiences = experiences.map((item) => {
       if (item.id === id) {
         const updatedExperience = {
@@ -67,7 +67,7 @@ function App() {
     setExperiences(newExperiences);
   }
 
-  function showEduForm(e, id) {
+  function showEduForm(id) {
     const newEducations = educations.map((item) => {
       if (item.id === id) {
         const updatedEducation = {
@@ -79,6 +79,34 @@ function App() {
       return item;
     });
     setEducations(newEducations);
+  }
+
+  function hideEducationSection(id) {
+    const newEducations = educations.map((item) => {
+      if (item.id === id) {
+        const updatedEducation = {
+          ...item,
+          isHidden: !item.isHidden,
+        };
+        return updatedEducation;
+      }
+      return item;
+    });
+    setEducations(newEducations);
+  }
+
+  function hideExperienceSection(id) {
+    const newExperiences = experiences.map((item) => {
+      if (item.id === id) {
+        const updatedExperience = {
+          ...item,
+          isHidden: !item.isHidden,
+        };
+        return updatedExperience;
+      }
+      return item;
+    });
+    setExperiences(newExperiences);
   }
 
   function addEducation() {
@@ -138,7 +166,7 @@ function App() {
                 key={x.id}
                 educationDetails={x}
                 onChange={(e) => handleEducationsChange(e, x.id)}
-                save={(e) => showEduForm(e, x.id)}
+                save={() => showEduForm(x.id)}
                 remove={() => removeEducation(x.id)}
               ></EducationForm>
             );
@@ -147,7 +175,8 @@ function App() {
             <CollapsedFormButton
               key={x.id}
               item={x}
-              onChange={(e) => showEduForm(e, x.id)}
+              onChange={() => showEduForm(x.id)}
+              hideSection={() => hideEducationSection(x.id)}
             ></CollapsedFormButton>
           );
         })}
@@ -163,7 +192,7 @@ function App() {
                 key={x.id}
                 experienceDetails={x}
                 onChange={(e) => handleExperiencesChange(e, x.id)}
-                save={(e) => showExpForm(e, x.id)}
+                save={() => showExpForm(x.id)}
                 remove={() => removeExperience(x.id)}
               ></ExperienceForm>
             );
@@ -172,7 +201,8 @@ function App() {
             <CollapsedFormButton
               key={x.id}
               item={x}
-              onChange={(e) => showExpForm(e, x.id)}
+              onChange={() => showExpForm(x.id)}
+              hideSection={() => hideExperienceSection(x.id)}
             ></CollapsedFormButton>
           );
         })}
