@@ -7,10 +7,14 @@ function Resume({ personalDetails, educations, experiences }) {
     <div className="resume">
       <ResumeHeader resumeHeaderData={personalDetails}></ResumeHeader>
       <div className="resume-details">
-        <h3 className="section-title">Education</h3>
-        <DisplaySection section={educations}></DisplaySection>
-        <h3 className="section-title">Professional Experience</h3>
-        <DisplaySection section={experiences}></DisplaySection>
+        <DisplaySection
+          section={educations}
+          sectionTitle={"Education"}
+        ></DisplaySection>
+        <DisplaySection
+          section={experiences}
+          sectionTitle={"Experiences"}
+        ></DisplaySection>
       </div>
     </div>
   );
