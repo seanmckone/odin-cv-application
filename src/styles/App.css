@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 500px;
 }
 
 .form-section-title {
@@ -20,7 +21,7 @@
   border: 0px;
   border-radius: 10px;
   background-color: var(--accent-bg-color);
-  width: 150px;
+  width: 100%;
   height: 40px;
   font-size: 18px;
   cursor: pointer;
