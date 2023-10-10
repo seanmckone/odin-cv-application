@@ -1,3 +1,5 @@
+import "../styles/FormButtons.css";
+
 function FormButtons({ cancel, remove, save }) {
   return (
     <div className="form-buttons">

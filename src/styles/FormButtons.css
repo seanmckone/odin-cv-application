@@ -1,0 +1,18 @@
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-cancel-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.form-buttons button {
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
