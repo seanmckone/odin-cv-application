@@ -1,5 +1,6 @@
 import InputGroup from "./InputGroup.jsx";
 import FormButtons from "./FormButtons.jsx";
+import "../styles/EduExpForm.css";
 
 function ExperienceForm({ experienceDetails, onChange, cancel, remove, save }) {
   return (

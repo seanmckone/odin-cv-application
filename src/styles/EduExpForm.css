@@ -1,0 +1,12 @@
+.education-form,
+.experience-form {
+  background-color: var(--accent-bg-color);
+  padding: 20px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 600px;
+}

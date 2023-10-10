@@ -1,4 +1,5 @@
 import InputGroup from "./InputGroup.jsx";
+import "../styles/PersonalDetails.css";
 
 function PersonalDetails({ personalDetails, onChange }) {
   return (
@@ -8,7 +9,7 @@ function PersonalDetails({ personalDetails, onChange }) {
       id="personal-details-form"
       className="personal-details-form"
     >
-      <h2>Personal Details</h2>
+      <h2 className="personal-details-title">Personal Details</h2>
       <InputGroup
         id="full-name"
         placeholder="First and last name"
