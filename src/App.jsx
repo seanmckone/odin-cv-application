@@ -130,6 +130,7 @@ function App() {
           onChange={handlePersonalDetailsChange}
         ></PersonalDetails>
 
+        <h2 className="form-section-title">Education</h2>
         {educations.map((x) => {
           if (!x.isCollapsed) {
             return (
@@ -150,8 +151,11 @@ function App() {
             ></CollapsedFormButton>
           );
         })}
-        <button onClick={addEducation}>+edu</button>
+        <button className="add-form-button" onClick={addEducation}>
+          + Education
+        </button>
 
+        <h2 className="form-section-title">Experience</h2>
         {experiences.map((x) => {
           if (!x.isCollapsed) {
             return (
@@ -172,7 +176,9 @@ function App() {
             ></CollapsedFormButton>
           );
         })}
-        <button onClick={addExperience}>+exp</button>
+        <button className="add-form-button" onClick={addExperience}>
+          + Experience
+        </button>
       </div>
 
       <div className="resume-side">
