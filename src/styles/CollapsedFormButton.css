@@ -1,10 +1,27 @@
-.collapsed-form-button {
+.collapsed-form {
   background-color: var(--accent-bg-color);
-  border-width: 0px;
   border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsed-form-button,
+.hide-section-button {
+  border-width: 0px;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px;
   cursor: pointer;
+}
+
+.collapsed-form-button {
+  background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  text-align: left;
+}
+
+.hide-section-button {
+  border-radius: 10px;
+  background-color: var(--main-bg-color);
 }
