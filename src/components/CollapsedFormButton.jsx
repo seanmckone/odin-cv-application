@@ -7,7 +7,7 @@ function CollapsedFormButton({ item, onChange, hideSection }) {
         {item.school ? item.school : item.company}
       </button>
       <button className="hide-section-button" onClick={hideSection}>
-        Hide
+        {item.isHidden ? "Hidden" : "Shown"}
       </button>
     </div>
   );
