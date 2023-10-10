@@ -1,6 +1,8 @@
+import "../styles/CollapsedFormButton.css";
+
 function CollapsedFormButton({ item, onChange }) {
   return (
-    <button onClick={onChange}>
+    <button className="collapsed-form-button" onClick={onChange}>
       {item.school ? item.school : item.company}
     </button>
   );

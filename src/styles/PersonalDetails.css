@@ -1,7 +1,7 @@
 .personal-details-form {
   background-color: var(--accent-bg-color);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;

@@ -1,0 +1,9 @@
+.collapsed-form-button {
+  background-color: var(--accent-bg-color);
+  border-width: 0px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
