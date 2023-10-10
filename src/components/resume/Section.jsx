@@ -5,7 +5,9 @@ function Section({ sectionData }) {
     <div className="section">
       <div className="section-aux-info">
         <p>
-          {sectionData.startDate} - {sectionData.endDate}
+          {sectionData.startDate}
+          {sectionData.startDate && " - "}
+          {sectionData.endDate}
         </p>
         <p>{sectionData.location}</p>
       </div>
