@@ -21,11 +21,15 @@
 }
 
 @media (max-width: 650px) {
+  .resume-header {
+    padding: 15px;
+  }
+
   .resume-name {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .header-contact-info {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
