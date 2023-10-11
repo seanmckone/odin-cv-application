@@ -13,7 +13,7 @@ function Resume({ personalDetails, educations, experiences }) {
         ></DisplaySection>
         <DisplaySection
           section={experiences}
-          sectionTitle={"Experiences"}
+          sectionTitle={"Experience"}
         ></DisplaySection>
       </div>
     </div>
