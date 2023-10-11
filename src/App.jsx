@@ -153,6 +153,7 @@ function App() {
   return (
     <div className="app">
       <div className="edit-side">
+        <h1 className="app-title">Resume Builder</h1>
         <PersonalDetails
           personalDetails={personalDetails}
           onChange={handlePersonalDetailsChange}

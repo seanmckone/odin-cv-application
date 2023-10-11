@@ -30,6 +30,11 @@
   cursor: pointer;
 }
 
+.app-title {
+  font-size: 35px;
+  font-weight: lighter;
+}
+
 @media (max-width: 650px) {
   .app {
     margin: 10px;
