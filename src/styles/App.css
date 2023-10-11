@@ -1,7 +1,9 @@
 .app {
   display: flex;
-  gap: 50px;
   justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 50px;
+  margin: 40px;
 }
 
 .edit-side {
@@ -9,7 +11,8 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  width: 500px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .form-section-title {

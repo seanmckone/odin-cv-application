@@ -211,13 +211,11 @@ function App() {
         </button>
       </div>
 
-      <div className="resume-side">
-        <Resume
-          personalDetails={personalDetails}
-          educations={educations}
-          experiences={experiences}
-        ></Resume>
-      </div>
+      <Resume
+        personalDetails={personalDetails}
+        educations={educations}
+        experiences={experiences}
+      ></Resume>
     </div>
   );
 }

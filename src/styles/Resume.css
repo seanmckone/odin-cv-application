@@ -1,11 +1,12 @@
 .resume {
+  max-width: 800px;
+  width: 100%;
+  aspect-ratio: 8 / 11;
   background-color: var(--resume-bg-color);
-  width: 900px;
   box-shadow:
     rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.25) 0px 8px 16px -8px;
   line-height: 1.5;
-  height: 1200px;
 }
 
 .resume-details {
