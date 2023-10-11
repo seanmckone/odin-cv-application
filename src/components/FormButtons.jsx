@@ -3,14 +3,12 @@ import "../styles/FormButtons.css";
 function FormButtons({ remove, save }) {
   return (
     <div className="form-buttons">
-      <button type="button" onClick={remove}>
+      <button type="button" className="form-button" onClick={remove}>
         Delete
       </button>
-      <div className="save-cancel-buttons">
-        <button type="button" onClick={save}>
-          Save
-        </button>
-      </div>
+      <button type="button" className="form-button" onClick={save}>
+        Save
+      </button>
     </div>
   );
 }

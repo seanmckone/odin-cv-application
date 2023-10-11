@@ -3,16 +3,16 @@
   justify-content: space-between;
 }
 
-.save-cancel-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.form-buttons button {
+.form-button {
   border: 0px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+}
+
+.save-cancel-buttons {
+  display: flex;
+  gap: 20px;
 }

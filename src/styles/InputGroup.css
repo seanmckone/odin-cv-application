@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
   border: 0px;
   background-color: var(--main-bg-color);
   padding: 10px;
