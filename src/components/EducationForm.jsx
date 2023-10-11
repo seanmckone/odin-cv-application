@@ -28,7 +28,7 @@ function EducationForm({ educationDetails, onChange, cancel, remove, save }) {
         dataKey="degree"
         value={educationDetails.degree}
       />
-      <div id="dates">
+      <div className="dates">
         <InputGroup
           id="start-date"
           placeholder="Enter start date"

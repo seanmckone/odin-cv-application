@@ -10,3 +10,9 @@
 
   width: 100%;
 }
+
+.dates {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}

@@ -28,7 +28,7 @@ function ExperienceForm({ experienceDetails, onChange, cancel, remove, save }) {
         dataKey="position"
         value={experienceDetails.position}
       />
-      <div id="dates">
+      <div className="dates">
         <InputGroup
           id="start-date"
           placeholder="Enter start date"
