@@ -31,3 +31,10 @@
 .section-description {
   font-size: 17px;
 }
+
+@media (max-width: 650px) {
+  .resume-details {
+    padding: 20px;
+    font-size: 15px;
+  }
+}

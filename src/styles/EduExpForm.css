@@ -1,7 +1,7 @@
 .education-form,
 .experience-form {
   background-color: var(--accent-bg-color);
-  padding: 20px;
+  padding: 15px;
   border-radius: 20px;
 
   display: flex;

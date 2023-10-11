@@ -11,7 +11,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
 }
 
@@ -28,4 +28,10 @@
   height: 40px;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .app {
+    margin: 10px;
+  }
 }
