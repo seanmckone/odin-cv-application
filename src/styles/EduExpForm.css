@@ -1,18 +1,15 @@
 .education-form,
 .experience-form {
-  background-color: var(--accent-bg-color);
-  padding: 15px;
-  border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  width: 100%;
+  background-color: var(--accent-bg-color);
+  padding: 15px;
+  border-radius: 20px;
 }
 
 .dates {
   display: flex;
-  flex-direction: row;
-  gap: 30px;
+  flex-direction: column;
+  gap: 20px;
 }
